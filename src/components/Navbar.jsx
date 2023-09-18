@@ -1,5 +1,6 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosPerson } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,7 +8,7 @@ const Navbar = () => {
       <div className=" flex justify-between w-full h-[80px] ">
         <div>
           <ul className="flex justify-between items-center h-full">
-            <li>Everything</li>
+            <Link to="/">Shop</Link>
             <li>ACCESSORIES</li>
           </ul>
         </div>
@@ -19,8 +20,10 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center cursor-pointer">
-            <p>$0.00</p>
-            <AiOutlineShoppingCart />
+            <Link to="/cart" className="flex items-center">
+              <p>$0.00</p>
+              <AiOutlineShoppingCart />
+            </Link>
             <IoIosPerson className="mx-4" />
           </div>
         </div>
