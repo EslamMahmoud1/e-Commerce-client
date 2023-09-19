@@ -11,10 +11,23 @@ export const Signup = () => {
 
   const [errors, setErrors] = useState({});
 
+  const post = async () => {
+    await fetch("http://localhost:3000/api/v1/user/", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).catch((error) => {
+      console.error(error);
+    });
+  };
+
   const handleSubmit = () => {
     setErrors(validation(values));
 
     //post request
+    post();
   };
 
   useEffect(() => {
